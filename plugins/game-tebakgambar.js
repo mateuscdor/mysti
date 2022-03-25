@@ -6,7 +6,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.tebakgambar = conn.tebakgambar ? conn.tebakgambar : {}
     let id = m.chat
     if (id in conn.tebakgambar) {
-        conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.tebakgambar[id][0])
+        conn.sendButton(m.chat, 'Todavía hay preguntas sin respuesta en este chat', author, null, buttons, conn.tebakgambar[id][0])
         throw false
     }
     let json = await tebakgambar()
@@ -20,7 +20,7 @@ Bonus: ${poin} XP
         await conn.sendButton(m.chat, caption, author, json.img, buttons, m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebakgambar[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, null, [
+            if (conn.tebakgambar[id]) conn.sendButton(m.chat, `¡Se acabó el tiempo!\nLa respuesta es *${json.jawaban}*`, author, null, [
                 ['tebakgambar', '/tebakgambar']
             ], conn.tebakgambar[id][0])
             delete conn.tebakgambar[id]
