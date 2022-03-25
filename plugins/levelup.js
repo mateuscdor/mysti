@@ -13,13 +13,13 @@ Kurang *${max - user.exp}* lagi!
     let before = user.level * 1
     while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
     if (before !== user.level) {
-        let teks = `Selamat ${conn.getName(m.sender)} naik 🧬level`
+        let teks = `Felicidades  ${conn.getName(m.sender)} subiste de 🧬 Nivel 🥳 `
         let str = `
 ${teks} 
-• 🧬Level Sebelumnya : ${before}
-• 🧬Level Baru : ${user.level}
+• 🧬Nivel anterior : ${before}
+• 🧬Nuevo nivel : ${user.level}
 • Pada Jam : ${new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' })}
-*_Semakin sering berinteraksi dengan bot Semakin Tinggi level kamu_*
+*_Cuanto más interactúes con los bots, mayor será tu nivel_*
 `.trim()
         try {
             const img = await levelup(teks, user.level)
