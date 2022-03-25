@@ -23,11 +23,11 @@ export async function before(m) {
     }
     let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
     let caption = `
-*Soal:* ${room.soal}
-Terdapat *${room.jawaban.length}* jawaban${room.jawaban.find(v => v.includes(' ')) ? `
+*Pregunta:* ${room.soal}
+Hay *${room.jawaban.length}* jawaban${room.jawaban.find(v => v.includes(' ')) ? `
 (beberapa jawaban terdapat spasi)
 ` : ''}
-${isWin ? `*SEMUA JAWABAN TERJAWAB*` : isSurrender ? '*MENYERAH!*' : ''}
+${isWin ? `*TODAS LAS RESPUESTAS*` : isSurrender ? '*¡RENDICIÓN!*' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
         return isSurrender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
     }).filter(v => v).join('\n')}
