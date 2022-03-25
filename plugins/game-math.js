@@ -17,7 +17,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         await conn.reply(m.chat, `¿Cuál es el resultado de *${math.str}*?\n\nSe acaba el tiempo: ${(math.time / 1000).toFixed(2)} Segundos\nBonificacion por repuesta correcta: ${math.bonus} XP`, m),
         math, 4,
         setTimeout(() => {
-            if (conn.math[id]) conn.sendButton(m.chat, `¡Seacabó el tiempo!\nLa respuesta es ${math.result}`, author, null, [['again', `${usedPrefix}${command} ${math.mode}`], ...buttons], conn.math[id][0])
+            if (conn.math[id]) conn.sendButton(m.chat, `¡Se acabó el tiempo!\nLa respuesta es ${math.result}`, author, null, [['again', `${usedPrefix}${command} ${math.mode}`], ...buttons], conn.math[id][0])
             delete conn.math[id]
         }, math.time)
     ]
