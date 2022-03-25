@@ -2,7 +2,7 @@ let handler = async (m, { usedPrefix, command }) => {
 let _uptime = process.uptime() * 1000
 let uptime = clockString(_uptime)
 let runnya = `
-*───「 RUNTIME BOT 」───*
+*───「 BOT EN TIEMPO DE EJECUCIÓN 」───*
 
 Runtime : ${uptime}
 `
