@@ -8,6 +8,6 @@ let handler = async (m) => m.reply(`
 handler.help = ['apakah <teks>?']
 handler.tags = ['kerang']
 handler.customPrefix = /(\?$)/
-handler.command = /^apakah$/i
+handler.command = /^pregunta$/i
 
 export default handler
