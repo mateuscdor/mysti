@@ -41,16 +41,16 @@ let handler = async (m, { conn }) => {
   let neww = performance.now()
   let speed = neww - old
   m.reply(`
-Merespon dalam ${speed} millidetik
+ 🚄Responde en ${speed} milisegundos
 
-💬 Status :
+💬 ESTADO :
 - *${groupsIn.length}* Group Chats
 - *${groupsIn.length}* Groups Joined
 - *${groupsIn.length - groupsIn.length}* Groups Left
 - *${chats.length - groupsIn.length}* Personal Chats
 - *${chats.length}* Total Chats
 
-💻 *Server Info* :
+💻 *IMFORMACION DEL SERVIDOR* :
 RAM: ${format(totalmem() - freemem())} / ${format(totalmem())}
 
 _NodeJS Memory Usage_
