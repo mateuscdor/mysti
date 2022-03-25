@@ -10,9 +10,9 @@ ${res.map(v => `
 ${v.means.map(v => '- ' + v).join('\n`')}
 `).join('\n').trim()}
 
-Note:
-p = Partikel: kelas kata yang meliputi kata depan, kata sambung, kata seru, kata sandang, ucapan salam
-n = Nomina: kata benda
+Notas:
+p = Partículas: clase de palabra que incluye preposiciones, conjunciones, interjecciones, artículos, saludos
+n = sustantivo: sustantivo
 `.trim())
 }
 handler.help = ['kbbi <teks>']
