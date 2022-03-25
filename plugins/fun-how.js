@@ -1,8 +1,8 @@
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-    if (!text) throw `Use example ${usedPrefix}${command} i'm`
+    if (!text) throw `Ejemplo de uso ${usedPrefix}${command} i'm`
     conn.reply(m.chat, `
   ${command} *${text}*
-  *${text}* is *${(101).getRandom()}*% ${command.replace('how', '').toUpperCase()}
+  *${text}* es *${(101).getRandom()}*% ${command.replace('como', '').toUpperCase()}
   `.trim(), m, m.mentionedJid ? {
         mentions: m.mentionedJid
     } : {})
