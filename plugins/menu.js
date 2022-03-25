@@ -149,7 +149,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid, 'image').catch(_ => './src/avatar_contact.png')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://github.com/BrunoSobrino/TheMystic-Bot-MD', '𝙶𝙸𝚃𝙷𝚄𝙱', owner[0][0], '𝙾𝚆𝙽𝙴𝚁', [
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://chat.whatsapp.com/E9qJfvlLjENKAxnhII9rao', 'GRUPO', owner[0][0], '𝙾𝚆𝙽𝙴𝚁', [
       ['𝙳𝙾𝙽𝙰𝚁', '/donasi'],
       ['𝚂𝙿𝙴𝙴𝙳', '/ping'],
       ['𝙾𝚆𝙽𝙴𝚁', '/owner']
