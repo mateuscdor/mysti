@@ -7,13 +7,13 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
     let text = `*「 Group Information 」*\n
 *ID:* 
 ${groupMetadata.id}
-*Name:* 
+*Nombre:* 
 ${groupMetadata.subject}
 *Description:* 
 ${groupMetadata.desc?.toString() || 'unknown'}
-*Total Members:*
+*Total Miembros:*
 ${participants.length} Members
-*Group Owner:* 
+*Creador del grupo:* 
 @${owner.split('@')[0]}
 *Group Admins:*
 ${listAdmin}
@@ -26,8 +26,8 @@ ${antiLink ? '✅' : '❌'} Anti Link
 *Message Settings:*
 Welcome: ${sWelcome}
 Bye: ${sBye}
-Promote: ${sPromote}
-Demote: ${sDemote}
+Promover: ${sPromote}
+Degradar: ${sDemote}
 `.trim()
     conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
