@@ -27,7 +27,7 @@ export default handler
 import cheerio from 'cheerio'
 import FormData from 'form-data'
 export async function twitter(url) {
-  if (!/http(?:s)?:\/\/(?:www\.)?twitter\.com\/([a-zA-Z0-9_]+)/i) throw 'Link invalid!'
+  if (!/http(?:s)?:\/\/(?:www\.)?twitter\.com\/([a-zA-Z0-9_]+)/i) throw 'Enlace invalido!'
   let form = new FormData()
   form.append('url', encodeURI(url))
   form.append('submit', '')
