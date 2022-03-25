@@ -1,5 +1,5 @@
 let handler = async (m, { conn }) => {
-    conn.siapakahaku = conn.siapakahaku ? conn.siapakahaku : {}
+    conn.Quién soy = conn.Quién soy ? conn.quién soy : {}
     let id = m.chat
     if (!(id in conn.siapakahaku)) throw false
     let json = conn.siapakahaku[id][1]
