@@ -7,7 +7,7 @@ global.owner = [
   ['5219996125657'],
   ['5219991402134'],
   ['5219992095479'],
-  ['972557048356']
+  ['51977783315']
 ] // Cambia los numero que quieras
 global.mods = [] 
 global.prems = [] 
