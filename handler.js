@@ -488,7 +488,7 @@ export async function handler(chatUpdate) {
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
-                    this.reply(m.chat, `diperlukan level ${plugin.level} untuk menggunakan perintah ini. Level kamu ${_user.level}`, m)
+                    this.reply(m.chat, `Se requiere el nivel ${plugin.level} para usar este comando. Tu nivel es ${_user.level}`, m)
                     continue // If the level has not been reached
                 }
                 let extra = {
@@ -696,16 +696,16 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
-        owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
-        mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
-        premium: 'Perintah ini hanya untuk member _*Premium*_ !',
-        group: 'Perintah ini hanya dapat digunakan di grup!',
-        private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
-        admin: 'Perintah ini hanya untuk *Admin* grup!',
-        botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
-        unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
-        restrict: 'Fitur ini di *disable*!'
+        rowner: 'Este comando solo puede ser utilizado por _*OWWNER!1!1!*_',
+        owner: 'Este comando solo puede ser utilizado por _*Owner Bot*_!',
+        mods: 'Este comando solo puede ser utilizado por _*Moderator*_ !',
+        premium: 'Este comando solo puede ser utilizado por _*Premium*_ !',
+        group: '¡Este comando solo se puede usar en grupos!',
+        private: '¡Este comando solo se puede usar en el chat privado!',
+        admin: '¡Este comando es solo para el grupo *Admin*!',
+        botAdmin: '¡Haz que el bot sea *Administrador* para usar este comando!',
+        unreg: 'Regístrese para usar esta función escribiendo:\n\n*#daftar nombre.edad*\n\nEjemplo: *#daftar Manusia.16*',
+        restrict: '¡Esta característica está *deshabilitada*!'
     }[type]
     if (msg) return m.reply(msg)
 }
