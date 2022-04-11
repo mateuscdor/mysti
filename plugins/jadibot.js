@@ -1,5 +1,5 @@
 let handler = (t) => {
-t.reply('*Este bot no hace  subbots, pero se le puede crear uno para usted solo hable a este numeroen el priv (wa.me/51977783315)NO BOT*')
+t.reply('*Este bot no hace  subbots*')
 }
 handler.command = ['serbot']
 handler.help = ['sc']
