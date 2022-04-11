@@ -682,8 +682,8 @@ export async function deleteUpdate(message) {
         if (chat.delete)
             return
         await this.reply(msg.chat, `
-Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
-Untuk mematikan fitur ini, ketik
+Dectetado @${participant.split`@`[0]} ha eliminado el mensaje
+Para desactivar esta función, escriba
 *.enable delete*
 `.trim(), msg, {
             mentions: [participant]
