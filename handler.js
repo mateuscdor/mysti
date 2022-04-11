@@ -632,7 +632,7 @@ export async function participantsUpdate({ id, participants, action }) {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
                             (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
                             let apii = await this.getFile(pp)
-                            this.sendButton(id, text, groupMetadata.subject, apii.data, [[(action == 'add' ? 'WELCOME 🔥' : 'BYE 🔥'), 'ura']], '',  { mentions: [user], asLocation: true })
+                            this.sendButton(id, text, groupMetadata.subject, apii.data, [[(action == 'add' ? 'BIENVENID@ 👋' : 'ADIOS 👋'), 'ura']], '',  { mentions: [user], asLocation: true })
                         }
                 }
             }
