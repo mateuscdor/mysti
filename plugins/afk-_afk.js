@@ -2,7 +2,7 @@ export function before(m) {
     let user = global.db.data.users[m.sender]
     if (user.afk > -1) {
         m.reply(`
-  Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
+  ✳️ Dejaste de estar inactivo ${user.afkReason ? ' después de estar inactivo ' + user.afkReason : ''}
   Selama ${(new Date - user.afk).toTimeString()}
   `.trim())
         user.afk = -1
@@ -18,9 +18,11 @@ export function before(m) {
             continue
         let reason = user.afkReason || ''
         m.reply(`
-  No lo etiquetes!
-  Esta en  AFK ${reason ? 'Con razon ' + reason : 'Sin razon'}
-  Durante ${(new Date - afkTime).toTimeString()}
+*⚠ ️No lo etiquetes!!! ⚠️*
+*✳️ El usuario que mencionas está inactivo (AFK)*
+
+*👉${reason ? 'Motivo de inactividad' + reason : 'Motivo de inactividad: El usuario no especifico un motivo'}*
+*⌛ Tiempo transcurrido de inactividad: ${(new Date - afkTime).toTimeString()}*
   `.trim())
     }
     return true
