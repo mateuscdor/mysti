@@ -2,8 +2,8 @@ export function before(m) {
     let user = global.db.data.users[m.sender]
     if (user.afk > -1) {
         m.reply(`
-  ✳️ Dejaste de estar inactivo ${user.afkReason ? ' motivo de inactividad ' + user.afkReason : ''}
-  después de estar inactivo ${(new Date - user.afk).toTimeString()}
+  ✳️ Dejaste de estar inactivo ${user.afkReason ? ' motivo de inactividad:' + user.afkReason : ''}
+  después de estar inactivo: ${(new Date - user.afk).toTimeString()}
   `.trim())
         user.afk = -1
         user.afkReason = ''
