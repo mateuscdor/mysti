@@ -28,17 +28,17 @@ let tags = {
 const defaultMenu = {
   before: `
 ╭─「 %me 🤖」
-│ 👋🏻 Hai, %name!
+│ 👋🏻 Hola, %name!
 │
 │ 🧱 Limit : *%limit Limit*
-│ 🦸🏼‍♂️ Role : *%role*
+│ 🦸🏼‍♂️ Rol : *%role*
 │ 🔼 Level : *%level (%exp / %maxexp)*
 │ 💫 Total XP : %totalexp ✨
 │ 
-│ 📅 Tanggal: *%week, %date*
-│ 🕰️ Waktu: *%time*
+│ 📅 Fecha: *%week, %date*
+│ 🕰️ Tiempo: *%time*
 │
-│ 📈 Uptime: *%uptime (%muptime)*
+│ 📈 tiempo de actividad: *%uptime (%muptime)*
 │ 📊 Database: %rtotalreg of %totalreg
 ╰────
 %readmore`.trimStart(),
