@@ -1,6 +1,6 @@
 let handler = async (m, {command, conn}) => {
 if (command == 'nsfwloli') {
-let haha = await conn.getFile(`https://api-faza.herokuapp.com/api/wallpaper/nsfwloli?apikey=FZDEVELOPER`)
+let haha = await conn.getFile(`https://api-alc.herokuapp.com/api/anime/loli?&apikey=ConfuMods`)
 conn.sendButton(m.chat, `_${command}_`.trim(), author, haha.data, [['🔄 𝚂𝙸𝙶𝚄𝙸𝙴𝙽𝚃𝙴 🔄', `/${command}`]], m)
 } else {
 let haha = await conn.getFile(`https://api-faza.herokuapp.com/api/nsfw/${command.replace('nsfw', '')}?apikey=FZDEVELOPER`)
