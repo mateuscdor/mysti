@@ -1,5 +1,5 @@
 let handler = async (m, { conn, command }) => {
-  let api = `https://api-faza.herokuapp.com/api/wallpaper/${command}?apikey=FZDEVELOPER`
+  let api = `https://api-alc.herokuapp.com/api/anime/${command}?apikey=ConfuMods`
   conn.sendButton(m.chat, 'nih kak', author, api, [['lagii', `/${command}`]], m)  
 }
 
