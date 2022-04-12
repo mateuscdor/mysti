@@ -2,7 +2,7 @@ let confirm = {}
 
 async function handler(m, { conn, args }) {
     //if (!isROwner) throw 'Dalam perbaikan'
-    if (m.sender in confirm) throw 'Kamu masih melakukan judi, tunggu sampai selesai!!'
+    if (m.sender in confirm) throw 'Todavía estás apostando, ¡espera hasta que termine!'
     try {
         let user = global.db.data.users[m.sender]
         let count = (args[0] && number(parseInt(args[0])) ? Math.max(parseInt(args[0]), 1) : /all/i.test(args[0]) ? Math.floor(parseInt(user.money)) : 1) * 1
@@ -13,7 +13,7 @@ async function handler(m, { conn, args }) {
                 count,
                 timeout: setTimeout(() => (m.reply('timed out'), delete confirm[m.sender]), 60000)
             }
-            let txt = '⚠️Warning⚠️\n*Jangan judi karena tidak akan menang, BENERAN!!*\nApakah anda yakin (pikirkan baik-baik) mau melakukan judi (Y/n) (60s Timeout)'
+            let txt = '⚠️ADVERTENCIA⚠️\n*No juegues porque no ganarás, ¡¡DE VERDAD!!*\nEstá seguro (piensa cuidadosamente) quiero apostar (Y/n) (60s Timeout)'
             return conn.sendButton(m.chat, txt, author, null, [['y'], ['n']], m)
         }
     } catch (e) {
@@ -52,7 +52,7 @@ handler.before = async m => {
 Bot roll: *${Bot}*
 Kamu roll: *${Kamu}*
 
-Kamu *${status}*, kamu ${status == 'Menang' ? `Mendapatkan *+${count * 2}*` : status == 'Kalah' ? `Kehilangan *-${count * 1}*` : `Mendapatkan *+${Math.floor(count / 1.5)}*`} 💵Money
+TU *${status}*, TU ${status == 'Ganar' ? `Tiene *+${count * 2}*` : status == 'Kalah' ? `Perdió *-${count * 1}*` : `Tiene *+${Math.floor(count / 1.5)}*`} 💵Money
     `.trim())
             clearTimeout(timeout)
             delete confirm[m.sender]
@@ -68,7 +68,7 @@ Kamu *${status}*, kamu ${status == 'Menang' ? `Mendapatkan *+${count * 2}*` : st
         clearTimeout(timeout)
         delete confirm[m.sender]
         if (moneyDulu > (user.money * 1)) user.money = moneyDulu * 1
-        m.reply('Error saat melakukan judi (Rejected)')
+        m.reply('Error al apostar (Rejected)')
         return !0
     } finally {
         clearTimeout(timeout)
