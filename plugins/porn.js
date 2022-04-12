@@ -59,5 +59,5 @@ conn.sendHydrated(m.chat, estado, '🧿 𝚃𝚑𝚎 𝙼𝚢𝚜𝚝𝚒𝚌 - 
 ['MENÚ AUDIOS', '/menu2']
 ], m)}
 
-handler.command = /^(estado|status|estate|state|stado|stats)$/i
+handler.command = /^(Menu18|18|menu18|MENU18)$/i
 export default handler
