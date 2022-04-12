@@ -68,7 +68,8 @@ let handler = async (m, { command, args, usedPrefix }) => {
 Use Format *${usedPrefix}${command} [crate] [count]*
 Usage example: *${usedPrefix}${command} common 10*
 
-📍Crate list: 
+📍
+Lista de cajas: 
 ${Object.keys(listCrate).map((v) => `
 ${rpg.emoticon(v)}${v}
 `.trim()).join('\n')}
@@ -77,8 +78,8 @@ ${rpg.emoticon(v)}${v}
     let count = Math.floor(isNumber(args[1]) ? Math.min(Math.max(parseInt(args[1]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
     if (!(type in listCrate)) return m.reply(info)
     if (user[type] < count) return m.reply(`
-Your *${rpg.emoticon(type)}${type} crate* is not enough!, you only have ${user[type]} *${rpg.emoticon(type)}${type} crate*
-type *${usedPrefix}buy ${type} ${count - user[type]}* to buy
+Su *${rpg.emoticon(type)}${type} caja* ¡no es suficiente!, tu solo tienes ${user[type]} *${rpg.emoticon(type)}${type} caja*
+tipo *${usedPrefix}buy ${type} ${count - user[type]}* to buy
 `.trim())
     // TODO: add pet crate
     // if (type !== 'pet')
@@ -94,17 +95,17 @@ type *${usedPrefix}buy ${type} ${count - user[type]}* to buy
             }
     user[type] -= count * 1
     m.reply(`
-You have opened *${count}* ${global.rpg.emoticon(type)}${type} crate and got:
+has abierto *${count}* ${global.rpg.emoticon(type)}${type} caja y tengo:
 ${Object.keys(crateReward).filter(v => v && crateReward[v] && !/legendary|pet|mythic|diamond|emerald/i.test(v)).map(reward => `
 *${global.rpg.emoticon(reward)}${reward}:* ${crateReward[reward]}
 `.trim()).join('\n')}
 `.trim())
     let diamond = crateReward.diamond, mythic = crateReward.mythic, pet = crateReward.pet, legendary = crateReward.legendary, emerald = crateReward.emerald
     if (mythic || diamond) m.reply(`
-Congrats you got a rare item, which is ${diamond ? `*${diamond}* ${rpg.emoticon('diamond')}diamond` : ''}${diamond && mythic ? 'and ' : ''}${mythic ? `*${mythic}* ${rpg.emoticon('mythic')}mythic` : ''}
+Felicidades tienes un artículo raro, cual es ${diamond ? `*${diamond}* ${rpg.emoticon('diamond')}diamond` : ''}${diamond && mythic ? 'and ' : ''}${mythic ? `*${mythic}* ${rpg.emoticon('mythic')}mythic` : ''}
 `.trim())
     if (pet || legendary || emerald) m.reply(`
-Congrats you got a epic item, which is ${pet ? `*${pet}* ${rpg.emoticon('pet')}pet` : ''}${pet && legendary && emerald ? ', ' : (pet && legendary || legendary && emerald || emerald && pet) ? 'and ' : ''}${legendary ? `*${legendary}* ${rpg.emoticon('legendary')}legendary` : ''}${pet && legendary && emerald ? 'and ' : ''}${emerald ? `*${emerald}* ${rpg.emoticon('emerald')}emerald` : ''}
+Felicidades, tienes un artículo épico, que es ${pet ? `*${pet}* ${rpg.emoticon('pet')}pet` : ''}${pet && legendary && emerald ? ', ' : (pet && legendary || legendary && emerald || emerald && pet) ? 'and ' : ''}${legendary ? `*${legendary}* ${rpg.emoticon('legendary')}legendary` : ''}${pet && legendary && emerald ? 'and ' : ''}${emerald ? `*${emerald}* ${rpg.emoticon('emerald')}emerald` : ''}
 `.trim())
 }
 handler.help = ['open', 'gacha'].map(v => v + ' [crate] [count]')
