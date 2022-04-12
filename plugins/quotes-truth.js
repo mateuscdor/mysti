@@ -1,8 +1,8 @@
 import { truth } from '@bochilteam/scraper'
 
 let handler = async (m, { conn, usedPrefix }) => conn.sendButton(m.chat, await truth(), author, [
-    ['Truth', `${usedPrefix}truth`],
-    ['Dare', `${usedPrefix}dare`]
+    ['reto', `${usedPrefix}truth`],
+    ['verdad', `${usedPrefix}dare`]
 ], m)
 
 handler.help = ['truth']
