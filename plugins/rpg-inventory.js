@@ -115,7 +115,7 @@ ${items}
 *🎒 Total Items:* ${Object.keys(inventory.items).map(v => user[v]).reduce((a, b) => a + b, 0)} Items` : ''}${crates ? `
 
 
-*📍 Crates*
+*📍 cajas*
 ${crates}
 *🎒 Total Crates:* ${Object.keys(inventory.crates).map(v => user[v]).reduce((a, b) => a + b, 0)} Crates` : ''}${pets ? `
 
@@ -123,7 +123,7 @@ ${crates}
 *📍 Pets*
 ${pets}` : ''}${cooldowns ? `
 
-*⌚ Cooldowns*
+*⌚ Enfriamientos*
 ${cooldowns}` : ''}
 `.trim()
   m.reply(caption)
