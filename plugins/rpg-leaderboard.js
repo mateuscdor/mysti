@@ -31,7 +31,7 @@ let handler = async (m, { conn, args, participants, usedPrefix, command }) => {
 Use format *${usedPrefix}${command} [type] [page]*
 example *${usedPrefix}${command} money 1*
 
-📍 Type list
+📍 Lista de tipos
 ${leaderboard.map(v => `
 ${rpg.emoticon(v)}${v}
 `.trim()).join('\n')}
@@ -43,7 +43,7 @@ ${rpg.emoticon(v)}${v}
   // let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(5, sortedExp.length)
   let text = `
 • *${rpg.emoticon(type)}${type} Leaderboard page ${page} of ${getPage(type)}* •
-You: *${userItem.indexOf(m.sender) + 1}* of *${userItem.length}*
+tu: *${userItem.indexOf(m.sender) + 1}* de *${userItem.length}*
 
 ${sortedItem.slice(page * 25, page * 25 + 25).map((user, i) => `${i + 1}. ${participants.some(p => areJidsSameUser(user.jid, p.id)) ? `(${conn.getName(user.jid)}) wa.me/` : '@'}${user.jid.split`@`[0]} *${user[type]} ${rpg.emoticon(type)}${type}*`).join`\n`}
 `.trim()
