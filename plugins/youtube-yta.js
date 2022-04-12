@@ -2,7 +2,7 @@ let limit = 80
 import fetch from 'node-fetch'
 import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper';
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
-if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+if (!args || !args[0]) throw 'Uhm... ¿dónde está la URL?'
 let chat = global.db.data.chats[m.chat]
 const isY = /y(es)/gi.test(args[1])
 const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
@@ -25,8 +25,8 @@ lastError = e
 }}
 if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw 'Error: ' + (lastError || 'Can\'t download audio')
 conn.sendFile(m.chat, source, title + '.mp3', `
-*📌Title:* ${title}
-*🗎 Filesize:* ${audio.fileSizeH}
+*📌Titulo:* ${title}
+*🗎 Tamaño del archivo:* ${audio.fileSizeH}
 `.trim(), m, null, {
 asDocument: chat.useDocument
 })}
