@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 
 let handler = async(m, { conn, text }) => {
 
-  if (!text) return conn.reply(m.chat, 'Harap Masukan Username', m)
+  if (!text) return conn.reply(m.chat, 'Ingrese el nombre de usuario', m)
 
     let res = await fetch(`https://api.lolhuman.xyz/api/stalktiktok/${text}?apikey=rey2k22`)
     let json = await res.json()
@@ -10,13 +10,13 @@ let handler = async(m, { conn, text }) => {
     if (!json.status) throw json
     let thumb = await (await fetch(json.result.user_picture)).buffer()
     m.reply(`
-Username: ${json.result.username}
-Nickname: ${json.result.nickname}
-Followers: ${json.result.followers}
-Following: ${json.result.followings}
+Nombre de usuario: ${json.result.username}
+Apodo: ${json.result.nickname}
+Seguidores: ${json.result.followers}
+Siguiendo: ${json.result.followings}
 Likes: ${json.result.likes}
 Video: ${json.result.video}
-Bio: ${json.result.bio}
+biografía: ${json.result.bio}
 `.trim())
 }
 handler.help = ['tiktokstalk'].map(v => v + ' <username>')
