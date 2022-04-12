@@ -44,19 +44,19 @@ let handler = async (m, { conn }) => {
  🚄Responde en ${speed} milisegundos
 
 💬 ESTADO :
-- *${groupsIn.length}* Group Chats
-- *${groupsIn.length}* Groups Joined
-- *${groupsIn.length - groupsIn.length}* Groups Left
-- *${chats.length - groupsIn.length}* Personal Chats
-- *${chats.length}* Total Chats
+- *${groupsIn.length}* Gruos totales
+- *${groupsIn.length}* Grupos activos
+- *${groupsIn.length - groupsIn.length}* Grupos inactivos
+- *${chats.length - groupsIn.length}* Chats Personales
+- *${chats.length}* Chats Totales
 
 💻 *IMFORMACION DEL SERVIDOR* :
 RAM: ${format(totalmem() - freemem())} / ${format(totalmem())}
 
-_NodeJS Memory Usage_
+_Uso de memoria de NodeJS_
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 
-${cpus[0] ? `_Total CPU Usage_
+${cpus[0] ? `_Uso total de la CPU_
 ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
 
 _CPU Core(s) Usage (${cpus.length} Core CPU)_
