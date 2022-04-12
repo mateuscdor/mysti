@@ -17,7 +17,7 @@ let handler = async (m, { conn, text }) => {
     if (Buffer.isBuffer(e)) stiker = e
   } finally {
     if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m, false, { asSticker: true })
-    else throw 'Conversion failed'
+    else throw 'La conversión falló, el comando funciona para un stiker ya hecho'
   }
 }
 handler.help = ['wm <packname>|<author>']
