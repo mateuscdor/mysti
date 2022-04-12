@@ -1,6 +1,6 @@
 let handler = async (m, { conn }) => {
-    if (!m.quoted) throw 'where\'s message?'
-    if (m.quoted.mtype !== 'viewOnceMessage') throw 'Itu bukan pesan viewOnce'
+    if (!m.quoted) throw '¿dónde está el mensaje?'
+    if (m.quoted.mtype !== 'viewOnceMessage') throw 'Eso no es un mensaje viewOnce'
     const msg = await conn.loadMessage(m.quoted.id)
     if (!msg) throw 'can\'t open message!'
     await conn.copyNForward(m.chat, msg, true, { readViewOnce: true })
