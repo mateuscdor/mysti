@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, usedPrefix }) => {
-    let res = await fetch('https://api.waifu.pics/sfw/waifu')
+    let res = await fetch('https://api-alc.herokuapp.com/api/anime/waifu?&apikey=ConfuMods')
     if (!res.ok) throw await res.text()
     let json = await res.json()
     if (!json.url) throw 'Error!'
