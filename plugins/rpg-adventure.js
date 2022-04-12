@@ -3,12 +3,12 @@ let handler = async (m, { usedPrefix }) => {
     let user = global.db.data.users[m.sender]
     let timers = (cooldown - (new Date - user.lastadventure))
     if (user.health < 80) return m.reply(`
-Requires at least 80 ❤️Healths for the adventure!!
-please buy ❤️Healths first by typing *${usedPrefix}buy potion <quantity>*,
-and type *${usedPrefix}heal <quantity>* to use potions
+Requiere al menos 80 ❤️Salud para la aventura!!
+por favor buy ❤️Healths primero escribiendo *${usedPrefix}buy potion <quantity>*,
+y tipo *${usedPrefix}heal <quantity>* usar pociones
 `.trim())
     if (new Date - user.lastadventure <= cooldown) return m.reply(`
-You're already adventure!!, please wait *🕐${timers.toTimeString()}*
+¡¡Ya eres aventura!!, por favor espera*🕐${timers.toTimeString()}*
 `.trim())
     const rewards = reward(user)
     let text = 'you\'ve been adventure and lost'
