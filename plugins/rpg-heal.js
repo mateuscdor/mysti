@@ -6,13 +6,13 @@ Your ❤️health is full!
     const heal = 40 + (user.cat * 4)
     let count = Math.max(1, Math.min(Number.MAX_SAFE_INTEGER, (isNumber(args[0]) && parseInt(args[0]) || Math.round((100 - user.health) / heal)))) * 1
     if (user.potion < count) return m.reply(`
-Your 🥤Potion is not enough, you only have *${user.potion}* 🥤Potion
-type *${usedPrefix}buy potion ${count - user.potion}* to buy 🥤Potion
+Tu 🥤Potion no es suficiente, solo tienes *${user.potion}* 🥤Potion
+escriba *${usedPrefix}buy potión ${count - user.potion}* para comprar 🥤Potion
 `.trim())
     user.potion -= count * 1
     user.health += heal * count
     m.reply(`
-Successful use of *${count}* 🥤Potion(s)
+Uso exitoso de *${count}* 🥤Potion(s)
 `.trim())
 }
 
