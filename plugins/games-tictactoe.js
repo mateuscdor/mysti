@@ -33,7 +33,7 @@ ${arr.slice(6).join('')}
 Esperando @${room.game.currentTurn.split('@')[0]}
 Escriba *renunciar* para darse por vencido
 `.trim()
-        if (room.x !== room.o) await conn.sendButton(room.x, str, author, ['Renunciar', 'nyerah'], m, {
+        if (room.x !== room.o) await conn.sendButton(room.x, str, author, ['Ryerah', 'nyerah'], m, {
             mentions: conn.parseMention(str)
         })
         await conn.sendButton(room.o, str, author, ['Renunciar', 'nyerah'], m, {
