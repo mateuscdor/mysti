@@ -26,17 +26,17 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
             }[v]
         })
         let str = `
-Room ID: ${room.id}
+ID de la sala: ${room.id}
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
-Menunggu @${room.game.currentTurn.split('@')[0]}
-Ketik *nyerah* untuk nyerah
+Esperando @${room.game.currentTurn.split('@')[0]}
+Escriba *renunciar* para darse por vencido
 `.trim()
-        if (room.x !== room.o) await conn.sendButton(room.x, str, author, ['Nyerah', 'nyerah'], m, {
+        if (room.x !== room.o) await conn.sendButton(room.x, str, author, ['Renunciar', 'nyerah'], m, {
             mentions: conn.parseMention(str)
         })
-        await conn.sendButton(room.o, str, author, ['Nyerah', 'nyerah'], m, {
+        await conn.sendButton(room.o, str, author, ['Renunciar', 'nyerah'], m, {
             mentions: conn.parseMention(str)
         })
     } else {
