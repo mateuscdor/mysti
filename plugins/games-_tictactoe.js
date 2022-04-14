@@ -66,13 +66,13 @@ ${arr.slice(6).join('')}
 ${isWin ? `@${winner.split('@')[0]} ¡Ganar! (+${winScore} XP)` : isTie ? `Juego terminado (+${playScore} XP)` : `Doblar ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
-Ketik *nyerah* untuk nyerah
+Escriba *renunciar* para darse por vencido
 ID de la sala: ${room.id}
 `.trim()
         let users = global.db.data.users
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-        const btn = isTie ? ['TicTacToe', '/ttt'] : ['Darse por vencido', 'nyerah']
+        const btn = isTie ? ['TicTacToe', '/ttt'] : ['Renunciar', 'nyerah']
         if (room.x !== room.o)
             await this.sendButton(room.x, str, author, btn, m, {
                 mentions: this.parseMention(str)
