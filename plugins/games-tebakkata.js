@@ -6,14 +6,14 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.tebakkata = conn.tebakkata ? conn.tebakkata : {}
     let id = m.chat
     if (id in conn.tebakkata) {
-        conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.tebakkata[id][0])
+        conn.reply(m.chat, 'Todavía hay preguntas sin responder en este chat', conn.tebakkata[id][0])
         throw false
     }
     const json = await tebakkata()
     let caption = `
 ${json.soal}
 Timeout *${(timeout / 1000).toFixed(2)} detik*
-Ketik ${usedPrefix}teka untuk bantuan
+Ketik ${usedPrefix}texto de ayuda
 Bonus: ${poin} XP
 `.trim()
     conn.tebakkata[id] = [
