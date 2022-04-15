@@ -6,14 +6,14 @@ async function handler(m, { conn, args }) {
     try {
         let user = global.db.data.users[m.sender]
         let count = (args[0] && number(parseInt(args[0])) ? Math.max(parseInt(args[0]), 1) : /all/i.test(args[0]) ? Math.floor(parseInt(user.money)) : 1) * 1
-        if ((user.money * 1) < count) return m.reply('💵Uang kamu tidak cukup!!')
+        if ((user.money * 1) < count) return m.reply('💵Su dinero no es suficiente!')
         if (!(m.sender in confirm)) {
             confirm[m.sender] = {
                 sender: m.sender,
                 count,
                 timeout: setTimeout(() => (m.reply('timed out'), delete confirm[m.sender]), 60000)
             }
-            let txt = '⚠️ADVERTENCIA⚠️\n*No juegues porque no ganarás, ¡¡DE VERDAD!!*\nEstá seguro (piensa cuidadosamente) quiero apostar (Y/n) (60s Timeout)'
+            let txt = '⚠️ADVERTENCIA⚠️\n*No juegues porque no ganarás, ¡¡DE VERDAD!!*\nEstá seguro (piensa cuidadosamente) si quieres apostar (Y/n) (tiempo 60s)'
             return conn.sendButton(m.chat, txt, author, null, [['y'], ['n']], m)
         }
     } catch (e) {
@@ -49,8 +49,8 @@ handler.before = async m => {
                 user.money += (Math.floor(count / 1.5)) * 1
             }
             m.reply(`
-Bot roll: *${Bot}*
-Kamu roll: *${Kamu}*
+Rol del Bot: *${Bot}*
+Rol del Usuario: *${Kamu}*
 
 TU *${status}*, TU ${status == 'Ganar' ? `Tiene *+${count * 2}*` : status == 'Kalah' ? `Perdió *-${count * 1}*` : `Tiene *+${Math.floor(count / 1.5)}*`} 💵Money
     `.trim())
