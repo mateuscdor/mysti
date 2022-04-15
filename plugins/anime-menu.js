@@ -1,6 +1,6 @@
 let handler = async (m, { conn, command }) => {
   let api = `https://server-api-rey.herokuapp.com/api/random/${command}?apikey=apirey`
-  conn.sendButton(m.chat, 'nih kak', author, api, [['lagii', `/${command}`]], m)  
+  conn.sendButton(m.chat, '*AQUI TIENES!*', author, api, [['lagii', `/${command}`]], m)  
 }
 
 handler.command = handler.help = [
