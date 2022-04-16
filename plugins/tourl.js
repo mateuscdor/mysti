@@ -8,12 +8,13 @@ let handler = async (m) => {
   let media = await q.download()
   let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
   let link = await (isTele ? uploadImage : uploadFile)(media)
-  m.reply(`${link}
-${media.length} Byte(s)
-${isTele ? '(Sin fecha de vencimiento)' : '(No conocida)'}`)
+  m.reply(` *Subiada con exito a google*
+Link: ${link}
+Tamaño: ${media.length} Byte(s)
+F.Vencimiento: ${isTele ? '(Sin fecha de vencimiento)' : '(No conocida)'}`)
 }
 handler.help = ['tourl <reply image>']
 handler.tags = ['sticker']
-handler.command = /^(upload|tourl)$/i
+handler.command = /^(upload|tourl|subir)$/i
 
 export default handler
