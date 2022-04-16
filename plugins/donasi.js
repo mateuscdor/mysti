@@ -1,11 +1,11 @@
 let handler =  m => m.reply(`
 ╭─「     Donar     」
-│ • Se necesita Numeros para el Bot
-│ • asi quieres ayudar wa.me/51977783315
+│ • Necesito numeros para crear bots
+│ • A cambio se le puede crear un bot
 ╰────
 
 ╭─「     Donar     」
-│ • Gracias 
+│ • si estas interesado al priv de este numero wa.me/51977783315
 │ • Quetengas un buen dia, tarde o noche 🙂
 ╰────
 `.trim()) // Tambah sendiri kalo mau
