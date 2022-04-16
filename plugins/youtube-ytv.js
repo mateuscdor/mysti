@@ -1,6 +1,6 @@
 import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper';
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  if (!args || !args[0]) throw 'Uhm... ¿En donde esta el URL?'
   let { thumbnail, video, title } = await youtubedl(args[0])
       .catch(async () => await youtubedlv2(args[0]))
   let link = await video['360p'].download()
